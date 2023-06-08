@@ -1,20 +1,22 @@
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: dep1
+  name: deployment
+  labels:
+    app: web
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      name: web
-template:
-  metadata:
-    name: pod1
-    labels:
-      name: web
-  spec:
-    containers:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+        app1: web
+    spec:
+      containers:
       - name: nginx
         image: pradeepcoeb/agro:43
         ports:
-          - containerPort: 80
+        - containerPort: 80
