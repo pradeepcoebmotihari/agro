@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: dep1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: web
+template:
+  metadata:
+    name: pod1
+    labels:
+      name: web
+  spec:
+    containers:
+      - name: nginx
+        image: pradeepcoeb/agro:5
+        ports:
+          - containerPort: 80
