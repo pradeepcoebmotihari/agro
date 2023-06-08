@@ -15,6 +15,6 @@ template:
   spec:
     containers:
       - name: nginx
-        image: pradeepcoeb/agro:5
+        image: pradeepcoeb/agro:42
         ports:
           - containerPort: 80
