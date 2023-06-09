@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: pradeepcoeb/agro:22
+        image: pradeepcoeb/agro:23
         ports:
         - containerPort: 80
